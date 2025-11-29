@@ -1,0 +1,37 @@
+from PIL import Image
+import numpy as np
+
+def encrypt_image(input_path, output_path, key):
+    img = Image.open(input_path)
+    arr = np.array(img)
+
+    np.random.seed(key)
+    noise = np.random.randint(0, 256, arr.shape, dtype=np.uint8)
+
+    encrypted = (arr ^ noise)
+
+    Image.fromarray(encrypted).save(output_path)
+    print("Encryption done! Saved at", output_path)
+
+def decrypt_image(input_path, output_path, key):
+    img = Image.open(input_path)
+    arr = np.array(img)
+
+    np.random.seed(key)
+    noise = np.random.randint(0, 256, arr.shape, dtype=np.uint8)
+
+    decrypted = (arr ^ noise)
+
+    Image.fromarray(decrypted).save(output_path)
+    print("Decryption done! Saved at", output_path)
+
+# ----------- RUNNING PART --------------
+choice = input("Enter 'e' to encrypt or 'd' to decrypt: ")
+input_path = input("Enter input image path: ")
+output_path = input("Enter output image path: ")
+key = int(input("Enter numeric key: "))
+
+if choice == "e":
+    encrypt_image(input_path, output_path, key)
+else:
+    decrypt_image(input_path, output_path, key)
