@@ -1,21 +1,25 @@
-# 🔐 Image Encryption and Decryption using XOR & Random Noise
+# Image Encryption and Decryption using Python
 
-This project performs **image encryption and decryption** using a simple XOR operation combined with **pseudo-random noise** generated from a numeric key.  
-The same key must be used for both encryption and decryption.
-
----
-
-## ⭐ Features
-- Encrypts any image using XOR-based random noise.
-- Decrypts the encrypted image back to the original using the same key.
-- Simple and beginner-friendly code.
-- Uses **NumPy** and **Pillow (PIL)**.
+This Python program allows you to **encrypt and decrypt images** using a simple XOR-based method with a numeric key. The program uses the `PIL` and `numpy` libraries.
 
 ---
 
-## 📦 Requirements
+## Features
 
-Install the required Python libraries:
+- Encrypt any image using a numeric key.
+- Decrypt the image using the same key.
+- Works with all standard image formats (`.png`, `.jpg`, `.bmp`, etc.).
+
+---
+
+## Requirements
+
+- Python 3.x
+- Libraries:
+  - `Pillow`
+  - `numpy`
+
+Install the required libraries using pip:
 
 ```bash
 pip install pillow numpy
